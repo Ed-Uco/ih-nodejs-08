@@ -5,6 +5,10 @@ const router = express.Router();
 
 const usersController = require('./../controllers/usersController');
 
-router.get('/', usersController.register);
+const routeGuard = require("./../middlewares/route-guard")
+console.log("El routeGuard importado es: ", routeGuard.usuarioLoggeado)
+
+//2. RUTEO
+router.get('/profile', routeGuard.usuarioLoggeado,usersController.profile);
 
 module.exports = router;

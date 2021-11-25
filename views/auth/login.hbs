@@ -1,0 +1,13 @@
+{{!-- ./views/auth/login.hbs --}}
+<h1>Iniciar Sesion</h1>
+
+<form method="POST" action="/auth/login">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="hola@hola.com"/>
+      <label>Password</label>
+      <input type="password" name="password" placeholder="******">
+      <button type="submit" name="">Iniciar Sesion</button>
+{{#if errorMessage}}
+		<p>{{errorMessage}}</p>
+	{{/if}}
+</form>
